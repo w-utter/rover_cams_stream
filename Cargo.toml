@@ -1,0 +1,32 @@
+[package]
+name = "another_cams_test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rav1e = "0.6.6"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+rtp-rs = "0.6"
+#webrtc comms stuff
+#rtp = "0.9.0"
+#bytes = "1.5.0"
+#base64 = "0.21.5"
+
+
+#hardware encoding
+cros-libva = "0.0.6"
+
+[dependencies.uvc]
+git = "https://github.com/jumbeldliam/libuvc-rs"
+features = [
+  "vendor"
+]
+
+#[dependencies.webrtc]
+#git = "https://github.com/jumbeldliam/webrtc" 
+#rev = "12363bc"
+
+[dependencies.rusb]
+version = "0.9"

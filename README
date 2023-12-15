@@ -1,0 +1,9 @@
+This is the current api that The University of Melbourne Rover Team uses for their camera system.
+
+It uses LibUsb to handle USB IO for connecting / disconnecting devices, and LibUvc for handling opening and formatting of cameras (see [CameraThread])
+
+It also uses LibVA for hardware accelerated encoding, currently using H264 to reduce latency and overhead of software codec implementations (see [EncoderThread]).
+
+These events are all handled by a centralized manager which handles all events from our client over ROS & WebRTC to handle changes with camera settings (see [ManagerThread]) such as bitrate, frame dimensions, frames per second, etc.
+
+after encoding, all packets are sent over RTP to our media server which handles client side streams.
